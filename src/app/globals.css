@@ -11,3 +11,9 @@
   font-size: 13px;
   color: '#1c274c';
 }
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}

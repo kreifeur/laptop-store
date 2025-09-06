@@ -7,10 +7,16 @@ export default {
   ],
   theme: {
     extend: {
-      colors: {
-        background: "var(--background)",
-        foreground: "var(--foreground)",
-      },
+     colors: {
+        blue: {
+          50: '#f0f9ff',
+          100: '#e0f2fe',
+          500: '#0ea5e9',
+          700: '#0369a1',
+          800: '#075985',
+          900: '#0c4a6e',
+        }
+      }
     },
   },
   plugins: [],
