@@ -1,55 +1,78 @@
-// components/Footer.js
+import { FaFacebookF, FaTwitter, FaInstagram } from "react-icons/fa";
+
 const Footer = () => {
   return (
-    <footer className="bg-blue-900 text-white py-12 px-6">
-      <div className="container mx-auto">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          <div>
-            <h3 className="text-xl font-semibold mb-4">Association de Cosmétologie</h3>
-            <p className="mb-4">Promouvant l'excellence et l'innovation dans le secteur de la cosmétologie depuis 2010.</p>
-            <div className="flex space-x-4">
-              <a href="#" className="h-10 w-10 bg-blue-800 rounded-full flex items-center justify-center hover:bg-blue-700 transition-colors">
-                <span className="sr-only">Facebook</span>
-                📘
-              </a>
-              <a href="#" className="h-10 w-10 bg-blue-800 rounded-full flex items-center justify-center hover:bg-blue-700 transition-colors">
-                <span className="sr-only">Twitter</span>
-                🐦
-              </a>
-              <a href="#" className="h-10 w-10 bg-blue-800 rounded-full flex items-center justify-center hover:bg-blue-700 transition-colors">
-                <span className="sr-only">LinkedIn</span>
-                💼
-              </a>
-              <a href="#" className="h-10 w-10 bg-blue-800 rounded-full flex items-center justify-center hover:bg-blue-700 transition-colors">
-                <span className="sr-only">Instagram</span>
-                📸
-              </a>
+    <footer className="w-full bg-[#1c274c] text-white py-12">
+      <div className="w-[90%] mx-auto grid sm:grid-cols-4 grid-cols-1 gap-8">
+        <div className="flex flex-col gap-4">
+          <div className="font-[600] text-xl">
+            Tech
+            <span className="text-[#18ABC6] font-[600] text-xl">Store</span>
+          </div>
+          <p className="text-gray-300">
+            Your one-stop shop for the latest laptops and tech accessories at competitive prices.
+          </p>
+          <div className="flex gap-4">
+            <div className="bg-gray-700 w-8 h-8 rounded-full flex items-center justify-center bg-[#1877F2]">
+              <FaFacebookF />
             </div>
-          </div>
-          
-          <div>
-            <h3 className="text-xl font-semibold mb-4">Liens rapides</h3>
-            <ul className="space-y-2">
-              <li><a href="#" className="hover:text-yellow-300 transition-colors">Accueil</a></li>
-              <li><a href="#about" className="hover:text-yellow-300 transition-colors">À propos</a></li>
-              <li><a href="#events" className="hover:text-yellow-300 transition-colors">Événements</a></li>
-              <li><a href="#gallery" className="hover:text-yellow-300 transition-colors">Galerie</a></li>
-              <li><a href="#membership" className="hover:text-yellow-300 transition-colors">Adhésion</a></li>
-            </ul>
-          </div>
-          
-          <div>
-            <h3 className="text-xl font-semibold mb-4">Contact</h3>
-            <address className="not-italic">
-              <p className="mb-2">123 Rue de la Cosmétique, Paris</p>
-              <p className="mb-2">Tél: +33 1 23 45 67 89</p>
-              <p className="mb-2">Email: contact@association-cosmetologie.fr</p>
-            </address>
+            <div className="bg-gray-700 w-8 h-8 rounded-full flex items-center justify-center bg-[#1DA1F2]">
+              <FaTwitter />
+            </div>
+            <div className="bg-gray-700 w-8 h-8 rounded-full flex items-center justify-center bg-[#E1306C]">
+              <FaInstagram />
+            </div>
           </div>
         </div>
         
-        <div className="border-t border-blue-800 mt-10 pt-6 text-center">
-          <p>&copy; 2025 Association de Cosmétologie. Tous droits réservés.</p>
+        <div className="flex flex-col gap-4">
+          <h3 className="text-lg font-semibold">Shop</h3>
+          <ul className="flex flex-col gap-2 text-gray-300">
+            {["Laptops", "Accessories", "Tablets", "Deals", "New Arrivals"].map((item) => (
+              <a href="/products" key={item} className="hover:text-white cursor-pointer">{item}</a>
+            ))}
+          </ul>
+        </div>
+        
+        <div className="flex flex-col gap-4">
+          <h3 className="text-lg font-semibold">Support</h3>
+          <ul className="flex flex-col gap-2 text-gray-300">
+            {["Contact Us", "FAQs", "Shipping", "Returns", "Warranty"].map((item) => (
+              <a href={`/${'contact'}`} key={item} className="hover:text-white cursor-pointer">{item}</a>
+            ))}
+          </ul>
+        </div>
+        
+        <div className="flex flex-col gap-4">
+          <h3 className="text-lg font-semibold">Newsletter</h3>
+          <p className="text-gray-300">
+            Subscribe to get special offers, free giveaways, and new product alerts.
+          </p>
+          <form className="flex flex-col gap-2">
+            <input
+              type="email"
+              placeholder="Your email address"
+              className="p-2 rounded text-gray-800"
+              required
+            />
+            <button
+              type="submit"
+              className="px-4 bg-[#18ABC6] text-white py-2 rounded font-[500]"
+            >
+              Subscribe
+            </button>
+          </form>
+        </div>
+      </div>
+      
+      <div className="w-[90%] mx-auto border-t border-gray-700 mt-8 pt-8 flex sm:flex-row flex-col justify-between items-center">
+        <div className="text-gray-400 text-sm">
+          © 2025 TechStore. All rights reserved.
+        </div>
+        <div className="flex gap-6 text-gray-400 text-sm">
+          {["Privacy Policy", "Terms of Service", "Cookie Policy"].map((item) => (
+            <span key={item} className="hover:text-white cursor-pointer">{item}</span>
+          ))}
         </div>
       </div>
     </footer>
